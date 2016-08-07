@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "sourceMap": false,
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "target": "es5",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  },
+  "exclude": [
+    "node_modules",
+    "typings"
+  ],
+  "filesGlob": [
+    "**/*.ts",
+    "**/*.tsx",
+    "!typings/**",
+    "!node_modules/**"
+  ]
+}

@@ -6,7 +6,7 @@ const autoprefixer = require('autoprefixer');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  //devtool: 'source-map',
+  devtool: 'source-map',
   output: {
     path: './build',
     filename: '[name].[chunkhash].bundle.js',
@@ -16,7 +16,7 @@ module.exports = {
     'main': './src/main.ts'
   },
   ts: {
-    configFileName: './config/tsconf.json'
+    configFileName: './config/tsconfig.json'
   },
   tslint: {
     configuration: require('../tslint.json')
@@ -65,7 +65,12 @@ module.exports = {
       template: './src/index.html',
       inject: true
     }),
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      comments: false,
+      minimize: true,
+      compress: true,
+      mangle:   true
+    }),
     new CopyWebpackPlugin([{
       from: './src/assets',
       to: './build/assets'
