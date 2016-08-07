@@ -1,2 +1,4 @@
 <h1>{{ hello }}</h1>
-<span>{{ message }}</span>
+
+<input type="text" [(ngModel)]="chatinp">
+<button (click)="send(chatinp)">Send</button>
